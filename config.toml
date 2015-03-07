@@ -1,3 +1,10 @@
-baseurl = "http://ansachbach.github.io"
-languageCode = "en-us"
-title = "Ăn Sạch Bách"
+BaseUrl = "https://cuuk.me"
+LanguageCode = "en-us"
+Title = "Cuuk.Me"
+Author = "Cuuk.Me"
+[params]
+  Author = "Cuuk.Me"
+  Slogan = "A fresher way to cook"
+  Subslogan = "Fresh ingredients, great recipes delivered quickly to your home"
+  Description = "Cuuk.Me is a revolutionary way of getting material for you home meal"
+  Keywords = "fresh food, organic, organic food"

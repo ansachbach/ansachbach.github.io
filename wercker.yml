@@ -1,0 +1,22 @@
+box: wercker/default
+build:
+  steps:
+    - script:
+        name: Init submodules
+        code: git submodule update --init --force
+    - arjen/hugo-build:
+        version: 0.12
+        theme: herring-cove
+        flags: --buildDrafts=true
+    - mylesnoton/sass-compile:
+        version: 0.0.1
+        source-dir: $WERCKER_ROOT/nextgen/scss/
+        output-dir: $WERCKER_ROOT/public/mediass/css/
+        sourcemap: none
+deploy:
+  steps:
+    - hijonathan/gh-pages@0.2.3:
+        token: $GIT_TOKEN
+        domain: cuuk.me
+        basedir: public
+        branch: master

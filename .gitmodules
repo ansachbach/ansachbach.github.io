@@ -1,0 +1,6 @@
+[submodule "themes"]
+	path = themes
+	url = https://github.com/spf13/hugoThemes.git
+[submodule "nextgen/vendor/font-awesome"]
+	path = nextgen/vendor/font-awesome
+	url = https://github.com/FortAwesome/Font-Awesome.git
