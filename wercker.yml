@@ -7,7 +7,7 @@ build:
         code: git submodule update --init --force
     - script:
         name: Typescript
-        code: node_modules/.bin/tsc static/mediass/js/*.ts
+        code: node_modules/.bin/tsc $WERCKER_ROOT/nextgen/ts/*.ts $WERCKER_ROOT/public/mediass/js/
     - arjen/hugo-build:
         version: 0.12
         theme: herring-cove
