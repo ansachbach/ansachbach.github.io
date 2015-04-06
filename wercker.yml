@@ -5,9 +5,6 @@ build:
     - script:
         name: Init submodules
         code: git submodule update --init --force
-    - script:
-        name: Typescript
-        code: node_modules/.bin/tsc $WERCKER_ROOT/nextgen/ts/*.ts $WERCKER_ROOT/public/mediass/js/
     - arjen/hugo-build:
         version: 0.12
         theme: herring-cove
@@ -17,6 +14,9 @@ build:
         source-dir: $WERCKER_ROOT/nextgen/scss/
         output-dir: $WERCKER_ROOT/public/mediass/css/
         sourcemap: none
+    - script:
+        name: TypeScript
+        code: node_modules/.bin/tsc $WERCKER_ROOT/nextgen/ts/*.ts $WERCKER_ROOT/public/mediass/js/
 deploy:
   steps:
     - hijonathan/gh-pages@0.2.3:
