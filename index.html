@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html class="responsejs " xmlns:og="http://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Cuuk.Me</title>
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Cuuk.Me" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="keywords" content="fresh food, organic, organic food">
+  <meta name="description" content="Cuuk.Me is a revolutionary way of getting material for you home meal">
+  <meta name="twitter:description" content="Cuuk.Me is a revolutionary way of getting material for you home meal">
+  <meta name="twitter:image" content="https://cuuk.me/staticasset/img2.jpg">
+  <meta name="twitter:url" content="https://cuuk.me">
+  <meta name="author" content="Cuuk.Me">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <link href="favicon.ico" rel="shortcut icon">
+  <link href="https://cuuk.me/index.xml/" rel="alternate" type="application/rss+xml" title="Cuuk.Me" />
+  <link href="/mediass/css/index.css" media="screen" rel="stylesheet" type="text/css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+  <style type="text/css"></style>
+</head>
+<body class="">
+
+<form id="order-form" style="display: none">
+	<fieldset>
+		<legend>Contact</legend>
+		<div>
+			<input id="order-firstname" type="text" name="firstname" disabled></div>
+		<div>
+			<input id="order-lastname" type="text" name="lastname" disabled></div>
+		<div>
+			<input id="order-email" type="email" name="email" disabled></div>
+		<div>
+			<input id="order-phoneno" type="tel" placeholder="Phone number, e.g: 090 123 4567" name="phoneno">
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Menu</legend>
+		<select id="order-dishid" data-select-text="Choose your dish" name="dishid">
+			<option
+				value="grilled-fish"
+				data-imagesrc="/mediass/img/dish-grilled-fish.png"
+				data-description="with Mushroom Sauce"
+				>Grilled Fish
+			</option>
+			<option
+				value="grilled-chicken"
+				data-imagesrc="/mediass/img/dish-grilled-chicken.png"
+				data-description="with Rosemary"
+				>Grilled Chicken
+			</option>
+			<option
+				value="fettuccine"
+				data-imagesrc="/mediass/img/dish-fettuccine.png"
+				data-description="with Prawn & Baby Tomato"
+				selected="false"
+				>Fettuccine
+			</option>
+		</select>
+
+		<div><input id="order-amount" type="number" placeholder="how many box you want to order, e.g: 1" name="amount"></div>
+		<div id="order-datetime-wrapper">
+			<span>Delivery time</span>
+			<input
+				id="order-datetime"
+				type="datetime-local"
+				name="datetime">
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Misc</legend>
+		<textarea id="order-note" placeholder="Call me before delivery" placeholder="phone number" name="note"></textarea>
+	</fieldset>
+	<button id="order-submit" type="submit">Order</button>
+</form>
+<div id="order-thankyou"  style="display: none">
+	<h2 style="margin-top: 1em;">Thank you for your order!</h2>
+</div>
+
+<header id="header-main">
+  <div class="container clearfix">
+    <div class="pull-right small-hide" id="member-portal">
+      <div class="welcome-bar logged-in">
+        <span class="member-name"></span>
+        <a href="#placeholder/users/sign_out" class="sign-out logged-in" data-method="delete"
+           rel="nofollow">(Sign out)</a>
+      </div>
+      <a href="#placeholder/account" class="sign-out my-acct logged-in hide" id="my_account_nav_link">MY
+        ACCOUNT</a>
+<span class="notification logged-in hide">
+<span></span>
+</span>
+
+      <div class="sign-in logged-out">
+        <a href="#" data-role="sigin-with-fb" style="display: none">Sign in with FB to order</a>
+        <a href="#" data-role="order-form" style="display: none">Order</a>
+      </div>
+    </div>
+
+    <div class="pull-left" id="logo">
+      <a href="#placeholder/">
+        <img alt="Logo" src="/mediass/img/logo.png">
+      </a>
+    </div>
+    <button class="btn btn-navbar mobile-only" data-target=".nav-collapse" data-toggle="collapse" type="button">
+      Menu
+    </button>
+    <div class="nav-collapse collapse">
+      <nav id="main-nav">
+        <ul class="nav nav-pills">
+          <li><a href="#placeholder/pages/learn-more" id="nav_learn_more">Learn More</a></li>
+          <li><a href="#placeholder/pages/sample-recipes" id="nav_on_the_menu">On The Menu</a></li>
+          <li class="logged-out"><a href="#placeholder/pages/pricing" id="nav_pricing">Pricing</a></li>
+          <li><a style="display: none;" href="#placeholder/gifts" id="nav_gifts">Gifts</a></li>
+          <li>
+            <a href="#placeholder/market" id="nav_shop">Market
+              <span class="new-pill logged-in">New</span>
+            </a></li>
+
+        </ul>
+        <div class="mobile-portal mobile-only">
+          <a href="#placeholder/account" class="my-acct logged-in hide" id="my_account_nav_link_mobile">MY
+            ACCOUNT</a>
+<span class="notification logged-in hide">
+<span></span>
+</span>
+          <a href="#placeholder/users/sign_in" class="mobile-sign-in logged-out">Sign in</a>
+          <a href="#placeholder/users/sign_up" class="mobile-sign-in logged-out">Sign Up</a>
+          <a href="#placeholder/users/sign_out" class="mobile-sign-out logged-in" data-method="delete"
+             rel="nofollow">Sign out</a>
+        </div>
+      </nav>
+    </div>
+
+  </div>
+</header>
+
+<div id="main" role="main">
+
+<section id="hp-hero-1">
+  <div class="mobile-only hero-image">
+    <img alt="Mobile-hero-1-variant"
+         src="/mediass/img/bg.jpg">
+  </div>
+  <video
+    class="desktop-only"
+    autoplay
+    id="bgvid"
+    poster="/mediass/img/bg.jpg"
+    loop
+    >
+    
+    
+    <source src="/mediass/bg.mp4" type="video/mp4">
+  </video>
+  <div class="container clearfix">
+    <div class="row-fluid">
+      <div class="content">
+        
+        <h3>A fresher way to cook</h3>
+
+        <p>Fresh ingredients, great recipes delivered quickly to your home
+        </p>
+        <a href="#placeholder/users/sign_up" class="btn" id="home_join_now"><h5>Join Now</h5>
+          <span>Click here to get started today</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="row-fluid" id="how-it-works">
+  <div class="container clearfix">
+    <div class="content span12">
+      <h3>Let us do the legwork</h3>
+
+      <p>
+        We'll send all the ingredients you need in the exact amounts
+      </p>
+
+      <div class="mobile-only hero-image">
+        <img id="pizza-mobile" alt="Mobile-hero-4-compressed"
+             src="/mediass/img/pizza-mobile.png">
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="what-we-do clearfix span4">
+        <span>What we do</span>
+        <ul class="what-do clearfix">
+          <li class="plan">plan</li>
+          <li class="shop">shop</li>
+          <li class="measure">measure</li>
+          <li class="deliver">deliver</li>
+        </ul>
+      </div>
+      <div class="what-you-do">
+        <span>What you do</span>
+        <ul class="what-do">
+          <li class="cook">Cook &amp; Enjoy!</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pie">
+      <img alt="Crostada-base" class="pie-whole"
+           src="/mediass/img/pizza-base.png">
+
+      <div class="pie-slice-wrap">
+        <img alt="Crostada-piece"
+             class="pie-slice"
+             src="/mediass/img/pizza-slice.png"
+             data-31p-center-center="left: 0px; top: 0px;"
+             data-30p-center-center="left: 20px; top: 50px;"
+          >
+      </div>
+      <img alt="Pie-line-1" class="pie-line-1"
+           src="/mediass/img/pizza-line-left.png">
+      <img alt="Pie-line-2" class="pie-line-2"
+           src="/mediass/img/pizza-line-right.png">
+    </div>
+  </div>
+</section>
+<section class="row-fluid" id="incredible-recipes">
+  <div class="arrow"></div>
+  <div class="section-content">
+  <ul id='slider-hp1'>
+    <li>
+      <div class='slider_width'>
+        <img alt="Plated-meals_homepage-01" src="/mediass/img/dish-fettuccine.png" />
+      </div>
+      <div class='caption'>
+        <h1>Fettuccine</h1>
+        <h2>with Prawn & Baby Tomato</h2>
+      </div>
+    </li>
+    <li>
+      <div class='slider_width'>
+        <img alt="Plated-meals_homepage-02" src="/mediass/img/dish-grilled-fish.png" />
+      </div>
+      <div class='caption'>
+        <h1>Grilled Fish</h1>
+        <h2>with Mushroom Sauce</h2>
+      </div>
+    </li>
+    <li>
+      <div class='slider_width'>
+        <img alt="Plated-meals_homepage-03" src="/mediass/img/dish-grilled-chicken.png" />
+      </div>
+      <div class='caption'>
+        <h1>Grilled Chicken</h1>
+        <h2>with Rosemary</h2>
+      </div>
+    </li>
+  </ul>
+  <div class="mobile-only hero-image">
+    <img alt="Mobile-hero-2"
+         src="/mediass/img-mobile/dish-grilled-fish.jpg">
+  </div>
+  <div class="container clearfix">
+    <div class="content">
+      
+      <h3>Cook Incredible Recipes</h3>
+
+      <p>
+        Learn exciting new recipes each week,
+        
+        created with care by our test kitchen team
+      </p>
+      <a class="btn get-started" href="#placeholder/users/sign_up">
+        <span>Get Started Today »</span>
+      </a>
+
+      <div class="menu-box clearfix">
+        <div class="recipe-name">
+          <div style="display: block;" id="current-caption">
+            <h1>Frisee &amp; Farro Salad</h1>
+
+            <h2>with Warm Goat Cheese</h2>
+          </div>
+        </div>
+        <ol class="slider-controls cap-1">
+        </ol>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<section class="row-fluid" id="eat-fresher">
+  <div class="arrow"></div>
+  <div class="section-content">
+  <ul id='slider-hp2'>
+    <li>
+      <div class='slider_width'>
+        <img alt="Ingredients_homepage-seasonal_03" src="/mediass/img/veggie.png" />
+        <div class='name'></div>
+      </div>
+    </li>
+  </ul>
+  <div class="mobile-only hero-image">
+    <img alt="Mobile-hero-3" src="/mediass/img-mobile/veggie.jpg">
+  </div>
+  <div class="container clearfix">
+    <div class="row-fluid">
+      <div class="content span4 offset8">
+        
+        <h3>Eat Fresher Food</h3>
+
+        <p>
+          Our experts source the best seasonal ingredients directly
+          from farms, importers and family-run purveyors
+        </p>
+        <ul>
+          <li>Premium seasonal ingredients from artisanal purveyors</li>
+          <li>Emphasis on sustainable practices</li>
+          <li>Fresher than the supermarket</li>
+          <li>Specialty ingredients you can't find on your own</li>
+        </ul>
+        <a class="btn get-started" href="#placeholder/users/sign_up">
+          <span>Get Started Today »</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="row-fluid" id="cook-with-you">
+  <div class="arrow"></div>
+  <div class="section-content">
+    <h3>We can't wait to cook with you!</h3>
+
+    <p>Dinner is delightfully easy with our fresh ingredients and recipes.</p>
+
+    <div>
+      <a href="#placeholder/users/sign_up" class="btn get-started"><h5>Join Now</h5>
+        <span>Click here to get started today</span>
+      </a></div>
+  </div>
+</section>
+
+<script
+  src="/mediass/js/index.js"
+  type="text/javascript"></script>
+
+<footer>
+  <section class="container clearfix">
+    <div class="row-fluid">
+      <ul class="press-footer-logos">
+        <li>
+          <a class="press-sprite-wall-street-journal"
+             href="#placeholder/pages/press#wall-street-journal"></a>
+        </li>
+        <li>
+          <a class="press-sprite-techcrunch" href="#placeholder/pages/press#techcrunch"></a>
+        </li>
+        <li>
+          <a class="press-sprite-good-morning-america"
+             href="#placeholder/pages/press#good-morning-america"></a>
+        </li>
+        <li>
+          <a class="press-sprite-new-york-times" href="#placeholder/pages/press#new-york-times"></a>
+        </li>
+      </ul>
+    </div>
+    <div class="stay-connected row-fluid">
+      <div class="row-fluid">
+        <div class="span3 desktop-only">
+          <h3 class="footer-title">
+            Follow Us
+          </h3>
+          <ul class="socials">
+            <li><a href="https://facebook.com/cuukme" class="fb" target="_BLANK"></a></li>
+            <li><a href="https://twitter.com/cuukme" class="tw" target="_BLANK"></a></li>
+            <li><a href="https://instagram.com/cuukme" class="ig" target="_BLANK"></a></li>
+            <li><a href="https://youtube.com/cuukme/" class="youtube" target="_BLANK"></a></li>
+          </ul>
+        </div>
+        <div class="join span6">
+          <div class="clearfix">
+            <h3 class="footer-title">
+              Get free recipes
+            </h3>
+
+            <form novalidate="novalidate" accept-charset="UTF-8" action="/newsletter/subscribe" class="csrf-ajax"
+                  id="recipe_newsletter_footer_form" method="post">
+              <div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"><input
+                name="authenticity_token" value="8leQZT2C0SHv854ez76rvRBMUgp3kExadUYEenOVjfA=" type="hidden"></div>
+              <input id="newsletter_subscriber_source" name="newsletter_subscriber[source]"
+                     value="Footer newsletter form" type="hidden">
+              <input id="newsletter_subscriber_receive_meat_fish" name="newsletter_subscriber[receive_meat_fish]"
+                     value="1" type="hidden">
+              <input class="required email"
+                     data-validate="{required: true, email: true, messages: {email: 'Invalid email'}}"
+                     id="newsletter_subscriber_email" name="newsletter_subscriber[email]" placeholder="Email Address"
+                     type="text">
+              <button class="btn" value="submit">Go</button>
+            </form>
+
+            <p>A new menu in your inbox every week</p>
+          </div>
+        </div>
+        <div class="blog-preview span3">
+          <h3 class="footer-title">
+            <a href="#">Lorem ipsum</a>
+          </h3>
+
+          <div class="head clearfix">
+            <a href="#"></a><h4>
+            <a
+              href="#">Lorem ipsum</a>
+          </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="socials-mobile mobile-only">
+      <li><a href="https://facebook.com/cuukme" class="fb" target="_BLANK"></a></li>
+      <li><a href="https://twitter.com/cuukme" class="tw" target="_BLANK"></a></li>
+      <li><a href="https://instagram.com/cuukme" class="ig" target="_BLANK"></a></li>
+      <li><a href="https://youtube.com/cuukme/" class="youtube" target="_BLANK"></a></li>
+    </ul>
+  </section>
+  <section class="footer-bottom row-fluid">
+    <div class="container clearfix">
+      <ul class="footer-nav span8 nav nav-pills">
+        <li><a href="#placeholder/blog">Blog</a></li>
+        <li><a href="#placeholder/faq">Contact &amp; FAQ</a></li>
+        <li><a href="#placeholder/cookbook">Cookbook</a></li>
+        <li><a href="#placeholder/pages/meet-our-recent-partners">Suppliers</a></li>
+        <li><a href="#placeholder/gifts">Gifts</a></li>
+        <li><a href="#placeholder/pages/jobs">Jobs</a></li>
+        <li><a href="#placeholder/pages/press">Press</a></li>
+        <li><a href="#placeholder/pages/team">Team</a></li>
+      </ul>
+      <div class="span4 pull-right copy">
+        &copy; Cuuk.Me 2015. All rights reserved. 
+        <a href="#placeholder/pages/privacy">Privacy</a>
+        <a href="#placeholder/pages/terms">Terms</a>
+      </div>
+    </div>
+  </section>
+</footer>
+
+</div>
+<script src="/mediass/js/helpers.js" type="text/javascript"></script>
+<script src="/mediass/js/fb.js" type="text/javascript"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/anythingslider/1.9.1/jquery.anythingslider.min.js" type="text/javascript"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js" type="text/javascript"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.29/skrollr.min.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/fancybox/2.1.5/helpers/jquery.fancybox-buttons.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/helpers/jquery.fancybox-buttons.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/helpers/jquery.fancybox-media.js"></script>
+<link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/fancybox/2.1.5/helpers/jquery.fancybox-thumbs.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/helpers/jquery.fancybox-thumbs.js"></script>
+<link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.css"/>
+
+<script src="//cdn.jsdelivr.net/ddslick/2.0/jquery.ddslick.min.js" type="text/javascript"></script>
+
+<script src="/mediass/js/footer.js"></script>
+<script src="/mediass/js/orderform.js"></script>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.ui/1.11.3/jquery-ui.min.js"></script>
+<link rel="stylesheet"        href="//cdn.jsdelivr.net/jquery.ui/1.11.3/jquery-ui.min.css" />
+<script type="text/javascript" src="//cdn.jsdelivr.net/modernizr/2.8.3/modernizr.min.js"></script>
+<script type="text/javascript" src="//rawgit.com/jonstipe/datetime-local-polyfill/master/datetime-local-polyfill.js"></script>
+<link rel="stylesheet"        href="//rawgit.com/jonstipe/datetime-local-polyfill/master/datetime-local-polyfill.css" />
