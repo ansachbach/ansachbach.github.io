@@ -1,0 +1,4 @@
+*.js
+*.js.map
+!js/footer.js
+!js/index.js

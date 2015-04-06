@@ -1,0 +1,55 @@
+<form id="order-form" style="display: none">
+	<fieldset>
+		<legend>Contact</legend>
+		<div>
+			<input id="order-firstname" type="text" name="firstname" disabled></div>
+		<div>
+			<input id="order-lastname" type="text" name="lastname" disabled></div>
+		<div>
+			<input id="order-email" type="email" name="email" disabled></div>
+		<div>
+			<input id="order-phoneno" type="tel" placeholder="Phone number, e.g: 090 123 4567" name="phoneno">
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Menu</legend>
+		<select id="order-dishid" data-select-text="Choose your dish" name="dishid">
+			<option
+				value="grilled-fish"
+				data-imagesrc="/mediass/img/dish-grilled-fish.png"
+				data-description="with Mushroom Sauce"
+				>Grilled Fish
+			</option>
+			<option
+				value="grilled-chicken"
+				data-imagesrc="/mediass/img/dish-grilled-chicken.png"
+				data-description="with Rosemary"
+				>Grilled Chicken
+			</option>
+			<option
+				value="fettuccine"
+				data-imagesrc="/mediass/img/dish-fettuccine.png"
+				data-description="with Prawn & Baby Tomato"
+				selected="false"
+				>Fettuccine
+			</option>
+		</select>
+
+		<div><input id="order-amount" type="number" placeholder="how many box you want to order, e.g: 1" name="amount"></div>
+		<div id="order-datetime-wrapper">
+			<span>Delivery time</span>
+			<input
+				id="order-datetime"
+				type="datetime-local"
+				name="datetime">
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Misc</legend>
+		<textarea id="order-note" placeholder="Call me before delivery" placeholder="phone number" name="note"></textarea>
+	</fieldset>
+	<button id="order-submit" type="submit">Order</button>
+</form>
+<div id="order-thankyou"  style="display: none">
+	<h2 style="margin-top: 1em;">Thank you for your order!</h2>
+</div>

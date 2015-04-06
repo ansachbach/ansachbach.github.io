@@ -1,0 +1,25 @@
+{
+  "name": "cuukme-portal",
+  "version": "0.0.1",
+  "description": "Internal",
+  "main": "index.js",
+  "dependencies": {
+    "typescript": "^1.5.0-alpha"
+  },
+  "devDependencies": {
+    "typescript": "^1.5.0-alpha"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ansachbach/ansachbach.github.io.git"
+  },
+  "author": "TruongSinh Tran-Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ansachbach/ansachbach.github.io/issues"
+  },
+  "homepage": "https://github.com/ansachbach/ansachbach.github.io"
+}

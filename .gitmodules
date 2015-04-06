@@ -4,3 +4,6 @@
 [submodule "nextgen/vendor/font-awesome"]
 	path = nextgen/vendor/font-awesome
 	url = https://github.com/FortAwesome/Font-Awesome.git
+[submodule "nextgen/vendor/DefinitelyTyped"]
+	path = nextgen/vendor/DefinitelyTyped
+	url = https://github.com/borisyankov/DefinitelyTyped.git
