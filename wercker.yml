@@ -1,9 +1,13 @@
-box: wercker/default
+box: wercker/nodejs
 build:
   steps:
+    - npm-install
     - script:
         name: Init submodules
         code: git submodule update --init --force
+    - script:
+        name: Typescript
+        code: node_modules/.bin/tsc $WERCKER_ROOT/static/mediass/js/*.ts
     - arjen/hugo-build:
         version: 0.12
         theme: herring-cove
