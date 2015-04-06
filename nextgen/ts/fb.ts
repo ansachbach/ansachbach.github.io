@@ -1,5 +1,5 @@
-/// <reference path="../../../nextgen/vendor/DefinitelyTyped/fbsdk/fbsdk.d.ts" />
-/// <reference path="../../../nextgen/vendor/DefinitelyTyped/jquery/jquery.d.ts" />
+/// <reference path="../vendor/DefinitelyTyped/fbsdk/fbsdk.d.ts" />
+/// <reference path="../vendor/DefinitelyTyped/jquery/jquery.d.ts" />
 
 // This is called with the results from from FB.getLoginStatus().
 function statusChangeCallback(response: any) {
