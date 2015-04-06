@@ -16,7 +16,7 @@ build:
         sourcemap: none
     - script:
         name: TypeScript
-        code: node_modules/.bin/tsc $WERCKER_ROOT/nextgen/ts/*.ts $WERCKER_ROOT/public/mediass/js/
+        code: node_modules/.bin/tsc $WERCKER_ROOT/nextgen/ts/*.ts --outDir $WERCKER_ROOT/public/mediass/js/
 deploy:
   steps:
     - hijonathan/gh-pages@0.2.3:
