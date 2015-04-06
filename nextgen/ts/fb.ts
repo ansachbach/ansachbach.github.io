@@ -1,24 +1,36 @@
 /// <reference path="../vendor/DefinitelyTyped/fbsdk/fbsdk.d.ts" />
 /// <reference path="../vendor/DefinitelyTyped/jquery/jquery.d.ts" />
+/// <reference path="helpers.ts" />
 
+
+$signinWithFb.click(function(){
+    FB.login(statusChangeCallback);
+    console.log("login");
+})
 // This is called with the results from from FB.getLoginStatus().
 function statusChangeCallback(response: any) {
     // The response object is returned with a status field that lets the
     // app know the current login status of the person.
     // Full docs on the response object can be found in the documentation
     // for FB.getLoginStatus().
-    if (response.status === 'connected') {
+    switch(response.status){
+        case "connected":
         // Logged into your app and Facebook.
+        $orderFormButton.show();
+        $signinWithFb.hide();
         testAPI();
-    } else if (response.status === 'not_authorized') {
+        break;
+    case "not_authorized":
         // The person is logged into Facebook, but not your app.
-        document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
-    } else {
+        $orderFormButton.hide();
+        $signinWithFb.show();
+        break;
+    default:
         // The person is not logged into Facebook, so we're not sure if
         // they are logged into this app or not.
-        document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
+        $orderFormButton.hide();
+        $signinWithFb.show();
+        break;
     }
 }
 

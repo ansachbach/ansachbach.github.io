@@ -43,7 +43,7 @@ $orderForm.submit(function (e:Event) {
 	});
 	return false;
 });
-$("[data-role=order-form]")
+$orderFormButton
 	.click(function (e:Event) {
 		e.preventDefault();
 		if (fbUser) {

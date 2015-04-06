@@ -2,3 +2,7 @@
 
 var fbUser: any;
 var $body = $('body');
+
+var $orderFormButton = $("[data-role=order-form]");
+
+var $signinWithFb = $("[data-role=sigin-with-fb]");
